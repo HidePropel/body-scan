@@ -26,21 +26,17 @@
 
   body {
     font-family: 'Noto Sans KR', -apple-system, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
+    background: var(--bg); color: var(--text);
+    min-height: 100vh; min-height: -webkit-fill-available;
     overflow-x: hidden;
   }
 
   body::before {
-    content: '';
-    position: fixed; inset: 0;
+    content: ''; position: fixed; inset: 0;
     background-image:
       linear-gradient(var(--border) 1px, transparent 1px),
       linear-gradient(90deg, var(--border) 1px, transparent 1px);
-    background-size: 48px 48px;
-    opacity: 0.2;
+    background-size: 48px 48px; opacity: 0.2;
     pointer-events: none; z-index: 0;
   }
 
@@ -48,74 +44,51 @@
   .glow.a { width: 500px; height: 500px; background: rgba(0,212,170,0.07); top: -150px; left: -100px; }
   .glow.b { width: 500px; height: 500px; background: rgba(0,153,255,0.06); bottom: -150px; right: -100px; }
 
-  .app {
-    position: relative; z-index: 1;
-    max-width: 600px; margin: 0 auto;
-    padding: 28px 16px 100px;
-  }
+  .app { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; padding: 28px 16px 100px; }
 
-  /* ── HEADER ── */
+  /* HEADER */
   .header { text-align: center; margin-bottom: 28px; }
   .badge {
     display: inline-flex; align-items: center; gap: 6px;
-    background: rgba(0,212,170,0.1);
-    border: 1px solid rgba(0,212,170,0.3);
-    color: var(--accent);
-    font-size: 10px; font-weight: 700; letter-spacing: 1.8px;
+    background: rgba(0,212,170,0.1); border: 1px solid rgba(0,212,170,0.3);
+    color: var(--accent); font-size: 10px; font-weight: 700; letter-spacing: 1.8px;
     padding: 4px 12px; border-radius: 20px; margin-bottom: 12px;
   }
   .header h1 {
     font-size: 26px; font-weight: 700; letter-spacing: -0.5px;
     background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    margin-bottom: 8px;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px;
   }
   .header p { color: var(--muted); font-size: 13px; line-height: 1.6; }
 
-  /* ── API KEY PANEL ── */
+  /* API KEY PANEL */
   .apikey-panel {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 18px; padding: 18px 20px;
-    margin-bottom: 20px; transition: border-color 0.3s;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 18px; padding: 18px 20px; margin-bottom: 20px; transition: border-color 0.3s;
   }
   .apikey-panel.ok { border-color: rgba(0,212,170,0.4); }
-
-  .apikey-header {
-    display: flex; align-items: center;
-    justify-content: space-between; margin-bottom: 14px;
-  }
-  .apikey-title {
-    font-size: 13px; font-weight: 600; color: var(--text);
-    display: flex; align-items: center; gap: 8px;
-  }
+  .apikey-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .apikey-title { font-size: 13px; font-weight: 600; color: var(--text); display: flex; align-items: center; gap: 8px; }
   .status-dot {
     width: 8px; height: 8px; border-radius: 50%;
-    background: var(--warn); box-shadow: 0 0 6px var(--warn);
-    transition: all 0.3s;
+    background: var(--warn); box-shadow: 0 0 6px var(--warn); transition: all 0.3s;
   }
   .status-dot.active { background: var(--accent); box-shadow: 0 0 8px var(--accent); }
-
   .apikey-toggle {
     font-size: 11px; color: var(--muted); cursor: pointer;
     background: var(--surface2); border: 1px solid var(--border);
     padding: 4px 10px; border-radius: 8px; font-family: inherit;
-    transition: color 0.2s;
   }
-  .apikey-toggle:hover { color: var(--accent); }
   .apikey-body.hidden { display: none; }
-
   .apikey-input-row { display: flex; gap: 8px; }
   .apikey-input {
     flex: 1; background: var(--surface); border: 1px solid var(--border);
     border-radius: 10px; color: var(--text);
     font-family: 'DM Mono', monospace; font-size: 13px;
-    padding: 11px 14px; outline: none; min-width: 0;
-    transition: border-color 0.2s;
+    padding: 11px 14px; outline: none; min-width: 0; transition: border-color 0.2s;
   }
   .apikey-input:focus { border-color: var(--accent); }
   .apikey-input::placeholder { color: var(--muted); }
-
   .btn-save-key {
     padding: 11px 18px;
     background: linear-gradient(135deg, var(--accent), var(--accent2));
@@ -123,30 +96,19 @@
     color: #000; font-weight: 700; font-size: 13px;
     cursor: pointer; white-space: nowrap; font-family: inherit;
   }
-
-  .apikey-hint {
-    margin-top: 10px; font-size: 11px;
-    display: flex; align-items: center; gap: 6px;
-    color: var(--muted); flex-wrap: wrap;
-  }
+  .apikey-hint { margin-top: 10px; font-size: 11px; display: flex; align-items: center; gap: 6px; color: var(--muted); flex-wrap: wrap; }
   .apikey-hint.saved { color: var(--accent); }
   .apikey-hint a { color: var(--accent2); text-decoration: none; margin-left: auto; }
 
-  /* ── UPLOAD ZONE ── */
+  /* UPLOAD ZONE */
   .upload-zone {
     background: var(--card); border: 2px dashed var(--border);
-    border-radius: 20px; padding: 36px 20px;
-    text-align: center; cursor: pointer;
-    transition: all 0.25s; margin-bottom: 12px;
+    border-radius: 20px; padding: 36px 20px; text-align: center;
+    cursor: pointer; transition: all 0.25s; margin-bottom: 12px;
     position: relative; overflow: hidden;
   }
-  .upload-zone:hover, .upload-zone.drag-over {
-    border-color: var(--accent); background: rgba(0,212,170,0.04);
-  }
-  .upload-zone input[type="file"] {
-    position: absolute; inset: 0; opacity: 0;
-    cursor: pointer; font-size: 16px; z-index: 2;
-  }
+  .upload-zone:hover, .upload-zone.drag-over { border-color: var(--accent); background: rgba(0,212,170,0.04); }
+  .upload-zone input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; font-size: 16px; z-index: 2; }
   .upload-icon {
     width: 60px; height: 60px; margin: 0 auto 14px;
     background: linear-gradient(135deg, rgba(0,212,170,0.15), rgba(0,153,255,0.15));
@@ -156,67 +118,50 @@
   .upload-zone h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
   .upload-zone p { font-size: 12px; color: var(--muted); line-height: 1.6; }
   .upload-hint {
-    display: inline-block; margin-top: 12px;
-    font-size: 11px; color: var(--accent);
+    display: inline-block; margin-top: 12px; font-size: 11px; color: var(--accent);
     background: rgba(0,212,170,0.08); padding: 4px 12px; border-radius: 8px;
   }
 
-  /* ── CAMERA BUTTONS ── */
+  /* CAMERA BUTTONS */
   .camera-row { display: flex; gap: 10px; margin-bottom: 16px; }
   .btn-cam {
-    flex: 1; padding: 13px;
-    background: var(--surface2); border: 1px solid var(--border);
-    border-radius: 14px; color: var(--text);
-    font-size: 13px; font-weight: 500;
-    cursor: pointer; display: flex; align-items: center;
-    justify-content: center; gap: 7px;
-    font-family: inherit; transition: all 0.2s;
-    position: relative; overflow: hidden;
+    flex: 1; padding: 13px; background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 14px; color: var(--text); font-size: 13px; font-weight: 500;
+    cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 7px;
+    font-family: inherit; transition: all 0.2s; position: relative; overflow: hidden;
   }
-  .btn-cam input[type="file"] {
-    position: absolute; inset: 0; opacity: 0;
-    cursor: pointer; font-size: 16px;
-  }
+  .btn-cam input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; font-size: 16px; }
   .btn-cam:active { border-color: var(--accent); color: var(--accent); }
 
-  /* ── PREVIEW ── */
+  /* PREVIEW */
   .preview-wrap {
-    display: none; margin-bottom: 16px;
-    border-radius: 16px; overflow: hidden;
+    display: none; margin-bottom: 16px; border-radius: 16px; overflow: hidden;
     border: 1px solid var(--border); position: relative;
   }
-  .preview-wrap.visible { display: block; }
-  .preview-wrap img {
-    width: 100%; max-height: 260px;
-    object-fit: contain; background: var(--surface); display: block;
-  }
+  .preview-wrap img { width: 100%; max-height: 260px; object-fit: contain; background: var(--surface); display: block; }
   .preview-action-bar { position: absolute; top: 10px; right: 10px; }
   .preview-action-bar button {
     background: rgba(10,15,30,0.85); border: 1px solid var(--border);
     color: var(--text); font-size: 12px; padding: 6px 12px;
-    border-radius: 8px; cursor: pointer; backdrop-filter: blur(8px);
-    font-family: inherit;
+    border-radius: 8px; cursor: pointer; backdrop-filter: blur(8px); font-family: inherit;
   }
 
-  /* ── ANALYZE BUTTON ── */
+  /* ANALYZE BUTTON */
   .btn-analyze {
     width: 100%; padding: 16px;
     background: linear-gradient(135deg, var(--accent), var(--accent2));
-    border: none; border-radius: 14px;
-    color: #000; font-family: inherit; font-size: 16px; font-weight: 700;
-    cursor: pointer; align-items: center;
-    justify-content: center; gap: 8px; margin-bottom: 20px;
-    transition: all 0.2s; box-shadow: 0 8px 32px rgba(0,212,170,0.25);
+    border: none; border-radius: 14px; color: #000;
+    font-family: inherit; font-size: 16px; font-weight: 700;
+    cursor: pointer; align-items: center; justify-content: center; gap: 8px;
+    margin-bottom: 20px; transition: all 0.2s;
+    box-shadow: 0 8px 32px rgba(0,212,170,0.25);
     -webkit-appearance: none; display: none;
   }
   .btn-analyze.visible { display: flex; }
   .btn-analyze:disabled { opacity: 0.55; cursor: not-allowed; }
 
-  /* ── LOADING ── */
-  .loading-wrap {
-    display: none; flex-direction: column;
-    align-items: center; gap: 16px; padding: 40px 0;
-  }
+  /* LOADING */
+  .loading-wrap { display: none; flex-direction: column; align-items: center; gap: 16px; padding: 40px 0; }
   .loading-wrap.visible { display: flex; }
   .scan-anim { width: 72px; height: 72px; position: relative; }
   .scan-ring {
@@ -227,8 +172,7 @@
   .scan-ring:nth-child(2) { inset: 8px; border-top-color: var(--accent2); animation-duration: 0.7s; animation-direction: reverse; }
   .scan-ring:nth-child(3) { inset: 18px; border-top-color: rgba(0,212,170,0.4); animation-duration: 1.5s; }
   .scan-dot {
-    position: absolute; top: 50%; left: 50%;
-    transform: translate(-50%,-50%);
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
     width: 8px; height: 8px; background: var(--accent); border-radius: 50%;
     box-shadow: 0 0 12px var(--accent); animation: pulse 1s ease-in-out infinite;
   }
@@ -240,37 +184,24 @@
   .loading-text { font-size: 14px; color: var(--muted); }
   .loading-step { font-size: 12px; color: var(--accent); font-family: 'DM Mono', monospace; min-height: 20px; text-align: center; }
 
-  /* ── ERROR ── */
+  /* ERROR */
   .error-box {
-    display: none;
-    background: rgba(255,107,107,0.08); border: 1px solid rgba(255,107,107,0.3);
+    display: none; background: rgba(255,107,107,0.08); border: 1px solid rgba(255,107,107,0.3);
     border-radius: 12px; padding: 14px 18px; margin-bottom: 16px;
     font-size: 13px; color: #ff9999; line-height: 1.7; white-space: pre-line;
   }
-  .error-box.visible { display: block; }
 
-  /* ── RESULTS ── */
+  /* RESULTS */
   .results-wrap { display: none; }
-  .results-wrap.visible { display: block; }
-
-  .results-header {
-    display: flex; align-items: center;
-    justify-content: space-between; margin-bottom: 16px;
-  }
+  .results-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
   .results-header h2 { font-size: 16px; font-weight: 700; }
   .conf-badge {
     font-size: 11px; color: var(--accent);
     background: rgba(0,212,170,0.1); border: 1px solid rgba(0,212,170,0.25);
     padding: 4px 10px; border-radius: 20px; font-family: 'DM Mono', monospace;
   }
-
-  .section-lbl {
-    font-size: 10px; letter-spacing: 1.5px; font-weight: 700;
-    color: var(--muted); text-transform: uppercase; margin: 16px 0 10px;
-  }
-
+  .section-lbl { font-size: 10px; letter-spacing: 1.5px; font-weight: 700; color: var(--muted); text-transform: uppercase; margin: 16px 0 10px; }
   .fields-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px; }
-
   .field-card {
     background: var(--card); border: 1px solid var(--border);
     border-radius: 14px; padding: 12px 14px;
@@ -281,7 +212,6 @@
     from { opacity:0; transform:translateY(10px); }
     to   { opacity:1; transform:translateY(0); }
   }
-
   .f-label { font-size: 11px; color: var(--muted); font-weight: 500; margin-bottom: 7px; }
   .f-row { display: flex; align-items: center; gap: 6px; }
   .f-input {
@@ -291,30 +221,24 @@
     padding: 6px 9px; transition: border-color 0.2s;
     -moz-appearance: textfield; -webkit-appearance: none;
   }
-  .f-input::-webkit-inner-spin-button,
-  .f-input::-webkit-outer-spin-button { -webkit-appearance: none; }
+  .f-input::-webkit-inner-spin-button, .f-input::-webkit-outer-spin-button { -webkit-appearance: none; }
   .f-input:focus { outline: none; border-color: var(--accent); }
   .f-unit { font-size: 12px; color: var(--muted); font-family: 'DM Mono', monospace; }
   .f-missing { font-size: 10px; color: var(--warn); margin-top: 5px; }
 
-  /* ── ACTIONS ── */
+  /* ACTIONS */
   .action-row { display: flex; gap: 10px; }
-  .btn {
-    flex: 1; padding: 14px; border-radius: 12px;
-    font-family: inherit; font-size: 14px; font-weight: 600;
-    cursor: pointer; border: none; transition: all 0.2s; -webkit-appearance: none;
-  }
+  .btn { flex: 1; padding: 14px; border-radius: 12px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s; -webkit-appearance: none; }
   .btn-ghost { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
   .btn-solid { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #000; font-weight: 700; }
 
-  /* ── TOAST ── */
+  /* TOAST */
   .toast {
     position: fixed; bottom: 32px; left: 50%;
     transform: translateX(-50%) translateY(80px);
     background: var(--surface2); border: 1px solid var(--accent);
-    color: var(--accent); padding: 12px 24px;
-    border-radius: 12px; font-size: 14px; font-weight: 500;
-    transition: transform 0.3s ease; z-index: 999; white-space: nowrap;
+    color: var(--accent); padding: 12px 24px; border-radius: 12px;
+    font-size: 14px; font-weight: 500; transition: transform 0.3s ease; z-index: 999; white-space: nowrap;
   }
   .toast.show { transform: translateX(-50%) translateY(0); }
 
@@ -326,7 +250,6 @@
 </style>
 </head>
 <body>
-
 <div class="glow a"></div>
 <div class="glow b"></div>
 
@@ -338,7 +261,6 @@
     <p>측정 결과지 사진 한 장으로<br>체성분 수치를 자동 입력합니다</p>
   </div>
 
-  <!-- API KEY PANEL -->
   <div class="apikey-panel" id="apikeyPanel">
     <div class="apikey-header">
       <div class="apikey-title">
@@ -361,7 +283,6 @@
     </div>
   </div>
 
-  <!-- UPLOAD ZONE -->
   <div class="upload-zone" id="uploadZone">
     <input type="file" id="fileInput" accept="image/*">
     <div class="upload-icon">🗂️</div>
@@ -396,10 +317,8 @@
 
   <div class="loading-wrap" id="loadingWrap">
     <div class="scan-anim">
-      <div class="scan-ring"></div>
-      <div class="scan-ring"></div>
-      <div class="scan-ring"></div>
-      <div class="scan-dot"></div>
+      <div class="scan-ring"></div><div class="scan-ring"></div>
+      <div class="scan-ring"></div><div class="scan-dot"></div>
     </div>
     <p class="loading-text">이미지 분석 중…</p>
     <p class="loading-step" id="loadingStep"></p>
@@ -423,31 +342,30 @@
     API Key는 이 기기의 브라우저에만 저장됩니다<br>
     Powered by Claude Sonnet
   </div>
-
 </div>
 
 <div class="toast" id="toast"></div>
 
 <script>
 const FIELDS = [
-  { key: 'height',       label: '키',             unit: 'cm' },
-  { key: 'weight',       label: '몸무게',          unit: 'kg' },
-  { key: 'bone_mass',    label: '골격근량',        unit: 'kg' },
-  { key: 'fat_mass',     label: '체지방량',        unit: 'kg' },
-  { key: 'fat_pct',      label: '체지방률',        unit: '%'  },
-  { key: 'arm_r_muscle', label: '오른팔 근육량',   unit: 'kg' },
-  { key: 'arm_r_pct',    label: '오른팔 근육률',   unit: '%'  },
-  { key: 'arm_l_muscle', label: '왼팔 근육량',     unit: 'kg' },
-  { key: 'arm_l_pct',    label: '왼팔 근육률',     unit: '%'  },
-  { key: 'trunk_muscle', label: '몸통 근육량',     unit: 'kg' },
-  { key: 'trunk_pct',    label: '몸통 근육률',     unit: '%'  },
-  { key: 'leg_r_muscle', label: '오른다리 근육량', unit: 'kg' },
-  { key: 'leg_r_pct',    label: '오른다리 근육률', unit: '%'  },
-  { key: 'leg_l_muscle', label: '왼다리 근육량',   unit: 'kg' },
-  { key: 'leg_l_pct',    label: '왼다리 근육률',   unit: '%'  },
+  { key:'height',       label:'키',             unit:'cm' },
+  { key:'weight',       label:'몸무게',          unit:'kg' },
+  { key:'bone_mass',    label:'골격근량',        unit:'kg' },
+  { key:'fat_mass',     label:'체지방량',        unit:'kg' },
+  { key:'fat_pct',      label:'체지방률',        unit:'%'  },
+  { key:'arm_r_muscle', label:'오른팔 근육량',   unit:'kg' },
+  { key:'arm_r_pct',    label:'오른팔 근육률',   unit:'%'  },
+  { key:'arm_l_muscle', label:'왼팔 근육량',     unit:'kg' },
+  { key:'arm_l_pct',    label:'왼팔 근육률',     unit:'%'  },
+  { key:'trunk_muscle', label:'몸통 근육량',     unit:'kg' },
+  { key:'trunk_pct',    label:'몸통 근육률',     unit:'%'  },
+  { key:'leg_r_muscle', label:'오른다리 근육량', unit:'kg' },
+  { key:'leg_r_pct',    label:'오른다리 근육률', unit:'%'  },
+  { key:'leg_l_muscle', label:'왼다리 근육량',   unit:'kg' },
+  { key:'leg_l_pct',    label:'왼다리 근육률',   unit:'%'  },
 ];
 
-const STEPS = ['이미지 전송 중…','Claude 분석 중…','숫자 패턴 인식 중…','체성분 항목 매핑 중…','결과 정리 중…'];
+const STEPS = ['이미지 압축 중…','API 전송 중…','Claude 분석 중…','항목 매핑 중…','결과 정리 중…'];
 const KEY_NAME = 'body_scan_ak';
 let currentFile = null;
 
@@ -466,7 +384,7 @@ function saveKey() {
 }
 
 function updateKeyUI() {
-  const key = localStorage.getItem(KEY_NAME) || '';
+  const key   = localStorage.getItem(KEY_NAME) || '';
   const panel = document.getElementById('apikeyPanel');
   const dot   = document.getElementById('statusDot');
   const hint  = document.getElementById('apikeyHint');
@@ -509,6 +427,7 @@ zone.addEventListener('drop', e => {
   const f = e.dataTransfer.files[0];
   if (f && f.type.startsWith('image/')) handleFile(f);
 });
+
 function handleFile(file) {
   currentFile = file;
   const r = new FileReader();
@@ -520,11 +439,46 @@ function handleFile(file) {
   r.readAsDataURL(file);
 }
 
+// ── IMAGE RESIZE (iOS HEIC 및 대용량 이미지 대응) ──
+// Canvas로 리사이즈 후 JPEG base64 반환
+function resizeImageToBase64(file, maxSize) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onerror = () => reject(new Error('파일을 읽을 수 없습니다.'));
+    reader.onload = ev => {
+      const img = new Image();
+      img.onerror = () => reject(new Error('이미지를 불러올 수 없습니다. JPG/PNG 파일을 사용해주세요.'));
+      img.onload = () => {
+        try {
+          let { width, height } = img;
+          // 긴 변이 maxSize 초과 시 축소
+          if (width > maxSize || height > maxSize) {
+            if (width > height) { height = Math.round(height * maxSize / width); width = maxSize; }
+            else                { width  = Math.round(width  * maxSize / height); height = maxSize; }
+          }
+          const canvas = document.createElement('canvas');
+          canvas.width = width; canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, width, height);
+          // quality 0.85로 JPEG 변환
+          const dataURL = canvas.toDataURL('image/jpeg', 0.85);
+          const b64 = dataURL.split(',')[1];
+          resolve(b64);
+        } catch (err) {
+          reject(new Error('이미지 처리 중 오류: ' + err.message));
+        }
+      };
+      img.src = ev.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
 // ── ANALYZE ──
 async function analyzeImage() {
   const apiKey = localStorage.getItem(KEY_NAME);
   if (!apiKey) { showError('API Key를 먼저 입력하고 저장해주세요.'); return; }
-  if (!currentFile) return;
+  if (!currentFile) { showError('이미지를 먼저 선택해주세요.'); return; }
 
   const btn = document.getElementById('btnAnalyze');
   btn.disabled = true;
@@ -535,11 +489,11 @@ async function analyzeImage() {
   stepEl.textContent = STEPS[0];
   const timer = setInterval(() => { si=(si+1)%STEPS.length; stepEl.textContent=STEPS[si]; }, 1400);
 
-  const reader = new FileReader();
-  reader.onload = async ev => {
-    const b64  = ev.target.result.split(',')[1];
-    const mime = currentFile.type || 'image/jpeg';
+  try {
+    // 1) 이미지 리사이즈 (최대 1568px — Claude 최적 해상도)
+    const b64 = await resizeImageToBase64(currentFile, 1568);
 
+    // 2) API 호출
     const SYS = `당신은 체성분 측정 결과지에서 수치를 추출하는 전문 OCR 시스템입니다.
 이미지에서 아래 항목들의 수치를 정확히 읽어서 JSON으로만 응답하세요.
 숫자가 보이지 않으면 해당 key는 null로 설정하세요.
@@ -566,53 +520,62 @@ JSON 외에 다른 텍스트는 절대 포함하지 마세요.
   "_note": "string"
 }`;
 
-    try {
-      const res = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': apiKey,
-          'anthropic-version': '2023-06-01',
-          'anthropic-dangerous-direct-browser-access': 'true',
-        },
-        body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 1000,
-          system: SYS,
-          messages: [{
-            role: 'user',
-            content: [
-              { type: 'image', source: { type: 'base64', media_type: mime, data: b64 } },
-              { type: 'text', text: '이 이미지에서 체성분 수치를 추출해주세요.' }
-            ]
-          }]
-        })
-      });
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true',
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: SYS,
+        messages: [{
+          role: 'user',
+          content: [
+            // 리사이즈된 JPEG로 항상 전송
+            { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: b64 } },
+            { type: 'text',  text: '이 이미지에서 체성분 수치를 추출해주세요.' }
+          ]
+        }]
+      })
+    });
 
-      clearInterval(timer);
+    clearInterval(timer);
 
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        if (res.status === 401) throw new Error('API Key가 올바르지 않습니다.\n키를 다시 확인하고 저장해주세요.');
-        if (res.status === 429) throw new Error('요청 한도를 초과했습니다.\n잠시 후 다시 시도해주세요.');
-        if (res.status === 402) throw new Error('크레딧이 부족합니다.\nconsole.anthropic.com에서 충전해주세요.');
-        throw new Error(err.error?.message || `오류 코드: ${res.status}`);
-      }
-
-      const data = await res.json();
-      const raw  = data.content?.[0]?.text || '';
-      const m    = raw.match(/\{[\s\S]*\}/);
-      if (!m) throw new Error('응답 파싱 실패. 다시 시도해주세요.');
-      renderResults(JSON.parse(m[0]));
-
-    } catch (e) {
-      clearInterval(timer);
-      showError(e.message);
-    } finally {
-      hide('loadingWrap'); btn.disabled = false;
+    if (!res.ok) {
+      const errBody = await res.json().catch(() => ({}));
+      const msg = errBody?.error?.message || '';
+      if (res.status === 401) throw new Error('API Key가 올바르지 않습니다.\n키를 다시 확인하고 저장해주세요.');
+      if (res.status === 402) throw new Error('크레딧이 부족합니다.\nconsole.anthropic.com/settings/billing 에서 충전해주세요.');
+      if (res.status === 429) throw new Error('요청이 너무 많습니다.\n잠시 후 다시 시도해주세요.');
+      if (res.status === 400) throw new Error('잘못된 요청입니다. (400)\n' + msg);
+      if (res.status === 500) throw new Error('서버 오류입니다. (500)\n잠시 후 다시 시도해주세요.');
+      throw new Error(`오류 코드: ${res.status}\n${msg}`);
     }
-  };
-  reader.readAsDataURL(currentFile);
+
+    const data = await res.json();
+    const raw  = data?.content?.[0]?.text;
+    if (!raw) throw new Error('응답이 비어있습니다. 다시 시도해주세요.');
+
+    const m = raw.match(/\{[\s\S]*\}/);
+    if (!m) throw new Error('응답 파싱 실패.\n이미지가 체성분 결과지인지 확인해주세요.');
+
+    renderResults(JSON.parse(m[0]));
+
+  } catch (e) {
+    clearInterval(timer);
+    // TypeError 등 예상 외 에러도 명확히 표시
+    const msg = e instanceof TypeError
+      ? '네트워크 오류가 발생했습니다.\n인터넷 연결을 확인하고 다시 시도해주세요.\n(상세: ' + e.message + ')'
+      : e.message;
+    showError(msg);
+  } finally {
+    hide('loadingWrap');
+    btn.disabled = false;
+  }
 }
 
 // ── RENDER ──
@@ -621,7 +584,7 @@ function renderResults(data) {
   grid.innerHTML = '';
   let found = 0;
   FIELDS.forEach((f, i) => {
-    const v = data[f.key];
+    const v   = data[f.key];
     const has = v !== null && v !== undefined && v !== '';
     if (has) found++;
     const card = document.createElement('div');
@@ -662,18 +625,20 @@ function copyData() {
 function resetAll() {
   currentFile = null;
   ['fileInput','cameraInput','galleryInput'].forEach(id => document.getElementById(id).value = '');
-  hide('previewWrap'); hide('btnAnalyze');
-  hide('resultsWrap'); hide('loadingWrap'); hide('errorBox');
+  hide('previewWrap'); hide('btnAnalyze'); hide('resultsWrap'); hide('loadingWrap'); hide('errorBox');
 }
 
 // ── UTILS ──
 function show(id, d='block') { const e=document.getElementById(id); if(e) e.style.display=d; }
 function hide(id) { const e=document.getElementById(id); if(e) e.style.display='none'; }
-function showError(msg) { const e=document.getElementById('errorBox'); e.textContent='⚠ '+msg; e.style.display='block'; }
+function showError(msg) {
+  const e = document.getElementById('errorBox');
+  e.textContent = '⚠ ' + msg; e.style.display = 'block';
+}
 function showToast(msg) {
-  const t=document.getElementById('toast');
-  t.textContent=msg; t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'), 2500);
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
 }
 
 // ── INIT ──
